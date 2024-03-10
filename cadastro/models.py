@@ -3,15 +3,15 @@ from django.utils import timezone
 # Create your models here.
 
 class Colaboradores(models.Model):
-    matricula = models.CharField(max_length=20, unique=True)
     nome = models.CharField(max_length=100)
+    matricula = models.CharField(max_length=20, unique=True)
     serie = models.CharField(max_length=10)
     data_nascimento = models.DateField()
     data_criacao = models.DateTimeField(default=timezone.now)
     telefone = models.CharField(max_length=15)
 
     def __str__(self):
-        return self.matricula
+        return self.nome
     
 class Produtos(models.Model):
     produto = models.CharField(max_length=100)

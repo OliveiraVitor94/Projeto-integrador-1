@@ -2,7 +2,7 @@ from django.http import HttpResponse
 
 from django.shortcuts import render
 from django.views.generic import ListView
-from cadastro.models import Produtos
+from movimentacao.models import Produtos
 # Create your views here.
 
 def transparencia(request):
