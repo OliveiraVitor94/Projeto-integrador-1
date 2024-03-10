@@ -1,35 +1,37 @@
 {% load static %}
 
 
-
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Cards</title>
-    <link rel="stylesheet" href="{% static 'publico/home/css.css' %}">
+    <link rel="stylesheet" href="{% static 'publico/css.css' %}">
 </head>
 <body>
-    <div class="card">
-        <h2>CADASTROS</h2>
-        <p>Cadastre um colaborador</p>
-        <a href="#">cadastrar</a>
+    <p>
+    <div class="card-container">
+        <div class="card">
+            <h2>SUGESTÕES</h2>
+            <p>Faça e veja as sugestões</p>
+            <a href="#">Entrar</a>
+        <div>
+        
+        <div class="card">
+            <h2>TRANSPARÊNCIA</h2>
+            <p>Acesse seus dados</p>
+            <a href="/tranparencia/">Entar</a>
+        </div>
+
+
+        <div class="card">
+            <h2>ÁREA ADMINISTRATIVA</h2>
+            <p>Movimentação e cadastros</p>
+            <a href="/admin/">Entar</a>
+        </div>
     </div>
-
-    <div class="card">
-        <h2>MOVIMENTAÇÕES</h2>
-        <p>Entradas e Saídas de produtos</p>
-        <a href="#">Movimentar</a>
-    </div>
-
-    <div class="card">
-        <h2>ÁREA ADMINISTRATIVA</h2>
-        <p>Esse seus dados</p>
-        <a href="#">Entrar</a>
-    </div>
-
-    
-
+    <p>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<!-- transparencia.html -->
+<h1>Lista de Produtos</h1>
+<ul>
+    {% for produto in produtos_list %}
+        <li>Produto: {{ produto.produto }} | Unidade: {{ produto.unidade }} | Saldo: {{ produto.saldo }}</li>
+    {% endfor %}
+</ul>

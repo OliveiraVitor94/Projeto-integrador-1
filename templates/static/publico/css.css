@@ -1,0 +1,64 @@
+/* home.css */
+
+/* Reset de margem e preenchimento padrão para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Defina uma cor de fundo para a página inteira */
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Centralize o container dos cards horizontalmente */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap; /* Adicione esta linha para que os cards se ajustem em telas menores */
+}
+
+/* Estilize os cards individuais */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Altere a largura para ocupar 100% da largura da tela */
+    margin: 10px; /* Adicione um espaçamento entre os cards */
+}
+
+/* Estilize os títulos dos cards */
+.card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilize o subtexto dos cards */
+.card p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Estilize os links dos cards */
+.card a {
+    display: block;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover para os links dos cards */
+.card a:hover {
+    background-color: #0056b3;
+}

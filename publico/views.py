@@ -1,14 +1,16 @@
 from django.http import HttpResponse
 
 from django.shortcuts import render
-
+from django.views.generic import ListView
+from cadastro.models import Produtos
 # Create your views here.
 
 def transparencia(request):
-    return render(request, 'transparencia.html')
+    produtos_list = Produtos.objects.all()  # Obtém todos os produtos do banco de dados
+    return render(request, 'transparencia.html', {'produtos_list': produtos_list})
 
-def lista_produtos(request):
-    return render(request, 'lista_produtos.html')
+def sugestoes(request):
+    return render(request, 'sugestoes.html')
 
 def index(request):
     return render(request, 'publico_index.html')

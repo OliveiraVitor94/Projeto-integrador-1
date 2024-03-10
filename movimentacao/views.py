@@ -7,3 +7,4 @@ from django.shortcuts import render
 def movimentacao(request):
     print('produtos')
     return render(request, 'movimentacao.html')
+    
