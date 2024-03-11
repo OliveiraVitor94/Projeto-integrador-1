@@ -1,0 +1,58 @@
+/* Estilo para o contêiner */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Isso fará o contêiner ocupar toda a altura da tela */
+    background-color: none; /* Cor de fundo para o contêiner */
+}
+
+/* Estilo para o card */
+.card {
+    background-color: #fffecb; /* Cor de fundo para o card */
+    border-radius: 20px; /* Deixa os cantos do card arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra padrão */
+    padding: 20px; /* Adiciona preenchimento ao redor do card */
+    width: 400px; /* Defina a largura do card */
+    max-width: 90%; /* Define a largura máxima do card */
+}
+
+/* Estilo para o formulário dentro do card */
+#sugestao_form {
+    width: 100%; /* Faça o formulário ocupar toda a largura do card */
+    padding: 20px; /* Adicione preenchimento ao redor do formulário */
+    margin: 0; /* Remova as margens do formulário */
+    background-color: inherit; /* Use a mesma cor de fundo do card */
+}
+
+/* Estilo para o campo de sugestão dentro do formulário */
+#sugestao_form textarea {
+    width: 100%; /* Faça o campo de sugestão ocupar toda a largura do formulário */
+    height: 200px; /* Defina uma altura fixa para o campo de sugestão */
+    padding: 10px; /* Adicione preenchimento ao campo de sugestão */
+    margin-bottom: 10px; /* Adicione espaço entre o campo de sugestão e os outros campos */
+    border: 1px solid #ccc; /* Adicione uma borda ao campo de sugestão */
+    border-radius: 5px; /* Adicione cantos arredondados ao campo de sugestão */
+    box-sizing: border-box; /* Faça com que o padding e a borda não alterem o tamanho total do campo */
+}
+
+/* Estilo para os campos de entrada dentro do formulário */
+#sugestao_form input[type="text"] {
+    width: 100%; /* Faça os campos de texto ocuparem toda a largura do formulário */
+    padding: 10px; /* Adicione preenchimento aos campos de texto */
+    margin-bottom: 10px; /* Adicione espaço entre os campos de texto */
+    border: 1px solid #ccc; /* Adicione uma borda aos campos de texto */
+    border-radius: 5px; /* Adicione cantos arredondados aos campos de texto */
+    box-sizing: border-box; /* Faça com que o padding e a borda não alterem o tamanho total do campo */
+}
+
+/* Estilo para o botão de envio dentro do formulário */
+#sugestao_form button {
+    width: 100%; /* Faça o botão ocupar toda a largura do formulário */
+    padding: 10px; /* Adicione preenchimento ao botão */
+    background-color: #007bff; /* Defina a cor de fundo do botão */
+    color: #fff; /* Defina a cor do texto do botão */
+    border: none; /* Remova a borda do botão */
+    border-radius: 5px; /* Adicione cantos arredondados ao botão */
+    cursor: pointer; /* Mude o cursor para indicar que o botão é clicável */
+}

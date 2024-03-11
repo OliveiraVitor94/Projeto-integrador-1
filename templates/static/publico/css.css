@@ -262,3 +262,18 @@ footer {
     padding: 20px; /* Espaçamento interno do rodapé */
     text-align: center; /* Alinhamento do texto centralizado */
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Torna o container ocupar toda a altura da viewport */
+}
+
+form {
+    width: 400px; /* Define a largura do formulário */
+}
+
+form div {
+    margin-bottom: 10px; /* Adiciona um espaçamento entre os campos */
+}

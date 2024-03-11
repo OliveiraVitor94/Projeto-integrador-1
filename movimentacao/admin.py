@@ -8,3 +8,4 @@ class ProdutosAdmin(admin.ModelAdmin):
 @admin.register(models.Transacao)
 class transacaoAdmin(admin.ModelAdmin):
     list_display = 'tipo' , 'nome_produto' , 'quantidade' , 'data' ,
+
