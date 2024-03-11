@@ -8,10 +8,58 @@
 }
 
 /* Defina uma cor de fundo para a página inteira */
+/* Estilos para o corpo do documento */
 body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
+    background-image: url('caminho/para/sua/imagem.jpg'); /* Define a imagem de fundo */
+    background-color: #f5f5f5; /* Define uma cor de fundo como fallback caso a imagem não seja carregada */
+    opacity: 0.7; /* Define a opacidade do corpo do documento */
+    font-family: Arial, sans-serif; /* Define a família de fontes para o texto */
+    margin: 0; /* Remove margens padrão do corpo do documento */
+    padding: 0; /* Remove preenchimento padrão do corpo do documento */
 }
+
+
+/* Estilos para os parágrafos */
+p {
+    font-size: 16px; /* Define o tamanho da fonte para os parágrafos */
+    line-height: 1.6; /* Define a altura da linha para os parágrafos */
+    color: #333; /* Define a cor do texto para um tom de cinza escuro */
+    margin-bottom: 20px; /* Define a margem inferior para os parágrafos */
+}
+
+/* Estilos para as listas */
+ul, ol {
+    margin: 0; /* Remove margens padrão das listas */
+    padding: 0; /* Remove preenchimento padrão das listas */
+    list-style: none; /* Remove os estilos de marcadores padrão das listas */
+}
+
+/* Estilos para os itens de lista */
+li {
+    margin-bottom: 10px; /* Define a margem inferior para os itens de lista */
+}
+
+/* Estilos para as tabelas */
+table {
+    width: 100%; /* Define a largura da tabela como 100% da largura disponível */
+    border-collapse: collapse; /* Remove espaços entre as células da tabela */
+    margin-bottom: 20px; /* Define a margem inferior para as tabelas */
+}
+
+/* Estilos para os cabeçalhos de tabela */
+th {
+    background-color: #f0f0f0; /* Define a cor de fundo para os cabeçalhos da tabela */
+    padding: 8px; /* Adiciona preenchimento interno aos cabeçalhos da tabela */
+    text-align: left; /* Alinha o texto dentro dos cabeçalhos da tabela à esquerda */
+    border-bottom: 1px solid #ccc; /* Adiciona uma linha de borda na parte inferior dos cabeçalhos da tabela */
+}
+
+/* Estilos para as células da tabela */
+td {
+    padding: 8px; /* Adiciona preenchimento interno às células da tabela */
+    border-bottom: 1px solid #ccc; /* Adiciona uma linha de borda na parte inferior das células da tabela */
+}
+
 
 /* Centralize o container dos cards horizontalmente */
 .card-container {
@@ -62,3 +110,4 @@ body {
 .card a:hover {
     background-color: #0056b3;
 }
+
