@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArraiáTech</title>
+    <link rel="stylesheet" href="{% static 'publico/css.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="window.location.href='/'" class="logo">ArraiáTech</button>
+        <div class="menu">
+            <div class="menu-item"><a href="#">Páginas</a></div>
+            <div class="menu-item"><a href="#">Sobre</a></div>
+        </div>
+        <button onclick="window.location.href='/admin'">Entrar</button>
+    </div>
+</body>
+</html>
+
+

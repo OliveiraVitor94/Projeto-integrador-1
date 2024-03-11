@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -11,31 +10,40 @@
     <link rel="stylesheet" href="{% static 'publico/css.css' %}">
 </head>
 <body>
-    <p>
-        <h1>Lista de Produtos</h1>
+    {% include 'layouts/base.html' %}
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Unidade</th>
-                    <th>Entradas</th>
-                    <th>Saídas</th>
-                    <th>Saldo</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for produto in produtos_list %}
-                <tr>
-                    <td>{{ produto.nome_produto }}</td>
-                    <td>{{ produto.unidade }}</td>
-                    <td>{{ produto.entradas }}</td>
-                    <td>{{ produto.saidas }}</td>
-                    <td>{{ produto.saldo }}</td>    
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    {% block content %}
+    <!-- O conteúdo das suas páginas vai substituir este bloco -->
+    {% endblock %}
+    <p>
+        <div>
+             <h1> LISTA DE PRODUTOS </h1>
+        <div>
+
+        <div>    
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Unidade</th>
+                        <th>Entradas</th>
+                        <th>Saídas</th>
+                        <th>Saldo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for produto in produtos_list %}
+                    <tr>
+                        <td>{{ produto.nome_produto }}</td>
+                        <td>{{ produto.unidade }}</td>
+                        <td>{{ produto.entradas }}</td>
+                        <td>{{ produto.saidas }}</td>
+                        <td>{{ produto.saldo }}</td>    
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        <div>
     <p>
 </body>
 </html>
