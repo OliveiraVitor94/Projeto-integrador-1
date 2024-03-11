@@ -22,9 +22,9 @@ class Produtos(models.Model):
         return self.nome_produto
 
 class Transacao(models.Model):
+    tipo = models.CharField(max_length=1, choices=(('E', 'ENTRADA'), ('S', 'SAÍDA')))
     nome_produto = models.ForeignKey(Produtos, on_delete=models.CASCADE)
     quantidade = models.DecimalField(max_digits=10, decimal_places=2)
-    tipo = models.CharField(max_length=1, choices=(('E', 'ENTRADA'), ('S', 'SAÍDA')))
     data = models.DateTimeField(auto_now_add=True)
     colaborador = models.ForeignKey(Colaboradores, on_delete=models.CASCADE, default="")  # Substitua 1 pelo ID do colaborador padrão
 

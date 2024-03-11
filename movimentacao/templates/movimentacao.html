@@ -1,30 +1,20 @@
 {% load static %}
 
-
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjetoXWeb</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'movimentacao/css/produtos.css' %}">
+    <title>Meus Cards</title>
+    <link rel="stylesheet" href="{% static 'publico/css.css' %}">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#">ENTRADA DE INSUMOS</a>
-        <a href="#">SAIDA DE INSUMOS</a>
-        <a href="#">PRODUTOS PARA VENDA</a>
-        <a href="#">PRODUTOS</a>
-    </nav>
+    {% include 'layouts/base.html' %}
 
-    <div class="banner">
-        <h1>Seja Bem Vindo...</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin rhoncus dolor. Morbi ut ex imperdiet, tincidunt massa eget.</p>
-    </div>
-
-    <section class="servicos">
-        <h2>Sobre os nossos serviços...</h2>
-        <p>Descrição dos serviços oferecidos.</p>
-    </section>
+    {% block content %}
+    <!-- O conteúdo das suas páginas vai substituir este bloco -->
+    {% endblock %}
+    
 </body>
 </html>
