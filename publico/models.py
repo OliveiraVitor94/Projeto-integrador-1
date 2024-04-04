@@ -14,4 +14,4 @@ class Sugestao(models.Model):
     situacao = models.CharField(max_length=20, choices=SITUACAO_CHOICES, default='pendente')  # Adicionando campo situação
 
     def __str__(self):
-        return self.nome
+        return self.nome 

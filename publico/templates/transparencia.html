@@ -10,17 +10,12 @@
     <link rel="stylesheet" href="{% static 'publico/css.css' %}">
 </head>
 <body>
-    {% include 'layouts/base.html' %}
+    <div class="content">
+        {% include 'layouts/base.html' %}
 
-    {% block content %}
-    <!-- O conteúdo das suas páginas vai substituir este bloco -->
-    {% endblock %}
-    <p>
-        <div>
-             <h1> LISTA DE PRODUTOS </h1>
-        <div>
-
-        <div>    
+        {% block content %}
+        <div class="containertabela">
+            <h1>LISTA DE PRODUTOS</h1>
             <table>
                 <thead>
                     <tr>
@@ -43,11 +38,10 @@
                     {% endfor %}
                 </tbody>
             </table>
-        <div>
-    <p>
+        </div>
+        {% endblock %}
+        
+        {% include 'layouts/rodape.html' %}
+    </div>
 </body>
 </html>
-<!-- transparencia.html -->
-
-
-

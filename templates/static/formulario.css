@@ -4,15 +4,16 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Isso fará o contêiner ocupar toda a altura da tela */
-    background-color: none; /* Cor de fundo para o contêiner */
+    background-color: #ffefd5; /* Amarelo claro */
 }
 
 /* Estilo para o card */
 .card {
-    background-color: #fffecb; /* Cor de fundo para o card */
-    border-radius: 20px; /* Deixa os cantos do card arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra padrão */
-    padding: 20px; /* Adiciona preenchimento ao redor do card */
+    background-color: #f5f5f5; /* Cinza claro */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
     width: 400px; /* Defina a largura do card */
     max-width: 90%; /* Define a largura máxima do card */
 }
@@ -50,7 +51,7 @@
 #sugestao_form button {
     width: 100%; /* Faça o botão ocupar toda a largura do formulário */
     padding: 10px; /* Adicione preenchimento ao botão */
-    background-color: #007bff; /* Defina a cor de fundo do botão */
+    background-color: #ff7f50; /* Defina a cor de fundo do botão */
     color: #fff; /* Defina a cor do texto do botão */
     border: none; /* Remova a borda do botão */
     border-radius: 5px; /* Adicione cantos arredondados ao botão */

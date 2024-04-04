@@ -7,16 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Cards</title>
-    <link rel="stylesheet" href="{% static 'publico/css.css' %}">
 </head>
 <body>
     {% include 'layouts/base.html' %}
-
     {% block content %}
-    <!-- O conteúdo das suas páginas vai substituir este bloco -->
-    {% endblock %}
-    
-    <div class="card-container">
+ <div class="container">
         <div class="card">
             <h2>SUGESTÕES</h2>
             <p>Faça e veja as sugestões</p>
@@ -34,7 +29,9 @@
             <p>Movimentação e cadastros</p>
             <a href="/admin/">Entrar</a>
         </div>
-    </div>
-
+    </div>  
+    {% endblock %}
+    
+    {% include 'layouts/rodape.html' %} <!-- Aqui incluímos o rodapé -->
 </body>
 </html>
