@@ -1,7 +1,6 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from cadastro.models import Colaboradores
 
 class Produtos(models.Model):
     UNIDADE_CHOICES = (
@@ -27,7 +26,7 @@ class Transacao(models.Model):
     nome_produto = models.ForeignKey(Produtos, on_delete=models.CASCADE)
     quantidade = models.DecimalField(max_digits=10, decimal_places=2)
     data = models.DateTimeField(auto_now_add=True)
-    colaborador = models.ForeignKey(Colaboradores, on_delete=models.CASCADE, default="")  # Substitua 1 pelo ID do colaborador padrão
+
 
     def __str__(self):
         return f"Transação de {self.nome_produto.nome_produto}: {self.quantidade} ({self.tipo})"
