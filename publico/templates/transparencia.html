@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>Produto</th>
-                        <th>Unidade</th>
+                        <th>Saldo Inicial</th>
                         <th>Vendas</th>
                         <th>Saldo</th>
                         <th>Total</th>
@@ -30,7 +30,7 @@
                     {% for produto in produtos_list %}
                     <tr>
                         <td>{{ produto.nome }}</td>
-                        <td>{{ produto.unidade }}</td>
+                        <td>{{ produto.quantidade_inicial }}</td>
                         <td>{{ produto.vendas }}</td>
                         <td>{{ produto.saldo }}</td>
                         <td>{{ produto.arrecadacao }}</td>
