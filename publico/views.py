@@ -25,5 +25,6 @@ def sucesso(request):
 
 
 
+
 def index(request):
     return render(request, 'publico_index.html')

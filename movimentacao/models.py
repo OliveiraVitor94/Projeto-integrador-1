@@ -1,6 +1,4 @@
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 from django.core.exceptions import ValidationError
 
 class Produto(models.Model):
@@ -13,16 +11,22 @@ class Produto(models.Model):
 
     nome = models.CharField(max_length=100, unique=True)
     unidade = models.CharField(max_length=20, choices=UNIDADE_CHOICES, blank=False)
-    saldo = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    vendas = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    quantidade_inicial = models.IntegerField(default=0)
+    saldo = models.IntegerField(default=0, editable=False)
+    vendas = models.IntegerField(default=0, editable=False)
     data_criacao = models.DateTimeField(auto_now_add=True)
     preco = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     arrecadacao = models.DecimalField(max_digits=10, decimal_places=2, default=0, editable=False)
+
 
     def __str__(self):
         return self.nome
 
     def save(self, *args, **kwargs):
+        if not self.pk:  # Se o produto está sendo criado
+            self.saldo = self.quantidade_inicial
+        else:
+            self.saldo = self.quantidade_inicial - self.vendas
         self.arrecadacao = self.vendas * self.preco
         super().save(*args, **kwargs)
 
@@ -42,6 +46,5 @@ class Venda(models.Model):
         self.full_clean()  # Chama o método clean() antes de salvar
         super().save(*args, **kwargs)
         # Após salvar, atualiza o saldo do produto e o total de vendas
-        self.produto.saldo -= self.quantidade
         self.produto.vendas += self.quantidade
         self.produto.save()
