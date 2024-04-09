@@ -3,11 +3,11 @@ from .models import Sugestao
 from .forms import SugestaoForm
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from movimentacao.models import Produtos
+from movimentacao.models import Produto
 # Create your views here.
 
 def transparencia(request):
-    produtos_list = Produtos.objects.all()  # Obtém todos os produtos do banco de dados
+    produtos_list = Produto.objects.all()  # Obtém todos os produtos do banco de dados
     return render(request, 'transparencia.html', {'produtos_list': produtos_list})
 
 def criar_sugestao(request):
