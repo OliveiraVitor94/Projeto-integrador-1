@@ -29,8 +29,14 @@ class Produto(models.Model):
             self.saldo = self.quantidade_inicial - self.vendas
         self.arrecadacao = self.vendas * self.preco
         super().save(*args, **kwargs)
+        
+class Caixa(models.Model):
+    caixa = models.CharField(max_length=200)
+    def __str__(self):
+        return self.caixa      
 
 class Venda(models.Model):
+    caixa = models.ForeignKey(Caixa, on_delete=models.CASCADE)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     quantidade = models.DecimalField(max_digits=10, decimal_places=2)
     data = models.DateTimeField(auto_now_add=True)

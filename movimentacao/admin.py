@@ -1,13 +1,18 @@
 from django.contrib import admin
-from .models import Produto, Venda
+from .models import Produto, Venda, Caixa
 
 class ProdutoAdmin(admin.ModelAdmin):
     list_display = ('id' , 'nome', 'unidade', 'quantidade_inicial' , 'preco', 'vendas', 'saldo', 'arrecadacao', 'data_criacao')
 
 admin.site.register(Produto, ProdutoAdmin)
 
+class CaixaAdmin(admin.ModelAdmin):
+    list_display = ('id' , 'caixa')
+
+admin.site.register(Caixa, CaixaAdmin)
+
 class VendaAdmin(admin.ModelAdmin):
-    list_display = ('id','produto', 'quantidade', 'data')
+    list_display = ('id','produto', 'quantidade','caixa' , 'data')
 
     def save_model(self, request, obj, form, change):
         try:
