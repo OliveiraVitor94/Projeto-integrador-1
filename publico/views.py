@@ -24,7 +24,5 @@ def sucesso(request):
     return render(request, 'sucesso.html')
 
 
-
-
 def index(request):
     return render(request, 'publico_index.html')
