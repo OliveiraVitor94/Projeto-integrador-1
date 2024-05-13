@@ -57,3 +57,7 @@
     border-radius: 5px; /* Adicione cantos arredondados ao botão */
     cursor: pointer; /* Mude o cursor para indicar que o botão é clicável */
 }
+
+.linha-divisoria {
+    border-top: 2px solid #000;
+}
