@@ -40,17 +40,21 @@ class Venda(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     quantidade = models.DecimalField(max_digits=10, decimal_places=2)
     data = models.DateTimeField(auto_now_add=True)
+    saldo = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
 
+    
     def __str__(self):
-        return f"Venda de {self.produto.nome}: {self.quantidade}"
+        return f"{self.produto.nome}"
 
     def clean(self):
         if self.quantidade > self.produto.saldo:
-            raise ValidationError(f'Quantidade de venda inválida. Saldo insuficiente. Saldo atual do produto: {self.produto.saldo}')
+            raise ValidationError(f'Quantidade inválida, saldo insuficiente. Saldo atual do produto: {self.produto.saldo}')
 
     def save(self, *args, **kwargs):
         self.full_clean()  # Chama o método clean() antes de salvar
+        self.saldo = self.produto.saldo  # Atualiza o saldo
         super().save(*args, **kwargs)
         # Após salvar, atualiza o saldo do produto e o total de vendas
         self.produto.vendas += self.quantidade
         self.produto.save()
+
