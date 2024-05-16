@@ -8,7 +8,18 @@ from movimentacao.models import Produto
 
 def transparencia(request):
     produtos_list = Produto.objects.all()  # Obtém todos os produtos do banco de dados
-    return render(request, 'transparencia.html', {'produtos_list': produtos_list})
+    total_saldo_inicial = sum([produto.quantidade_inicial for produto in produtos_list])
+    total_vendas = sum([produto.vendas for produto in produtos_list])
+    total_saldo = sum([produto.saldo for produto in produtos_list])
+    total_arrecadacao = sum([produto.arrecadacao for produto in produtos_list])
+    return render(request, 'transparencia.html', {
+        'produtos_list': produtos_list,
+        'total_saldo_inicial': total_saldo_inicial,
+        'total_vendas': total_vendas,
+        'total_saldo': total_saldo,
+        'total_arrecadacao': total_arrecadacao
+    })
+
 
 def criar_sugestao(request):
     if request.method == 'POST':
