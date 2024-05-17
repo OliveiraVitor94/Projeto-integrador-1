@@ -22,3 +22,4 @@ urlpatterns = [
     path('', include('publico.urls')),
     path('movimentacao/', include('movimentacao.urls')),
 ]
+
