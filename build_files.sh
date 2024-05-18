@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# Verificar se pip está disponível
-if ! command -v pip &> /dev/null
-then
-    echo "pip não encontrado, instalando..."
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-    python get-pip.py --user
-    export PATH=$HOME/.local/bin:$PATH
-fi
-
 # Verificar se python está disponível
 if ! command -v python &> /dev/null
 then
@@ -22,6 +13,14 @@ then
     fi
 else
     PYTHON_CMD=python
+fi
+
+# Instalar o pip se necessário
+if ! command -v pip &> /dev/null
+then
+    echo "pip não encontrado, instalando..."
+    $PYTHON_CMD -m ensurepip --user
+    export PATH=$HOME/.local/bin:$PATH
 fi
 
 # Instalar dependências do projeto
