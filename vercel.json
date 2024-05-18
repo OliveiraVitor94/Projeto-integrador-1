@@ -3,16 +3,14 @@
   "builds": [
     {
       "src": "projetoIntegrador1/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
+      "use": "@vercel/python"
     },
     {
       "src": "build_files.sh",
       "use": "@vercel/static-build",
-      "config": {"distDir": "staticfiles_build"}
+      "config": {
+        "distDir": "staticfiles_build"
+      }
     }
   ],
   "routes": [
@@ -25,5 +23,10 @@
       "dest": "projetoIntegrador1/wsgi.py"
     }
   ],
-  "outputDirectory": "staticfiles_build"
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "projetoIntegrador1.settings",
+    "SECRET_KEY": "django-insecure-jsoka*xk5w4x@u#b2^t5yrm=ve0x4!$9#6n&gwy&sxi7zcru60",
+    "DEBUG": "true",
+    "DATABASE_URL": "postgres://postgres:kRwRaNulpEZEjCHQDOjWAnPEyOCYUKKS@roundhouse.proxy.rlwy.net:13272/railway"
+  }
 }
