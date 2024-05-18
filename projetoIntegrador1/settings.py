@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jsoka*xk5w4x@u#b2^t5yrm=ve0x4!$9#6n&gwy&sxi7zcru60
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','localhost']
 
 
 
@@ -77,12 +77,18 @@ WSGI_APPLICATION = 'projetoIntegrador1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'kRwRaNulpEZEjCHQDOjWAnPEyOCYUKKS',
+        'HOST': 'roundhouse.proxy.rlwy.net',
+        'PORT': '13272',
     }
 }
+
 
 
 # Password validation
@@ -120,9 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','templates/static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','templates/static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
