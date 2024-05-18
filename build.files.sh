@@ -1,5 +1,5 @@
 #!/bin/bash
-
+python -m pip install --upgrade pip
 # Instalar as dependências
 pip install -r requirements.txt
 
