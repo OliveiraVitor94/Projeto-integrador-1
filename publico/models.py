@@ -18,8 +18,12 @@ class Sugestao(models.Model):
     sugestao = models.TextField(max_length=200)
     data_sugestao = models.DateTimeField(auto_now_add=True)
     situacao = models.CharField(max_length=20, choices=SITUACAO_CHOICES, default='pendente')  # Adicionando campo situação
+    
 
     def save(self, *args, **kwargs):
         self.nome = self.nome.upper()  # Convertendo o nome para maiúsculo
         super(Sugestao, self).save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.nome
 
