@@ -1,24 +1,32 @@
 #!/bin/bash
 
 # Verificar se pip está disponível
-if ! command -v /usr/local/bin/pip &> /dev/null
+if ! command -v pip &> /dev/null
 then
     echo "pip não encontrado, instalando..."
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-    /usr/local/bin/python get-pip.py --user
+    python get-pip.py --user
     export PATH=$HOME/.local/bin:$PATH
 fi
 
 # Verificar se python está disponível
-if ! command -v /usr/local/bin/python &> /dev/null
+if ! command -v python &> /dev/null
 then
-    echo "Python não encontrado, falhando..."
-    exit 1
+    echo "Python não encontrado, verificando por python3..."
+    if ! command -v python3 &> /dev/null
+    then
+        echo "Python não encontrado, falhando..."
+        exit 1
+    else
+        PYTHON_CMD=python3
+    fi
+else
+    PYTHON_CMD=python
 fi
 
 # Instalar dependências do projeto
-/usr/local/bin/pip install -r requirements.txt --user
+pip install -r requirements.txt --user
 
 # Executar quaisquer outros comandos necessários para construir o projeto
 # Exemplo: coletar arquivos estáticos, realizar migrações, etc.
-/usr/local/bin/python manage.py collectstatic --noinput
+$PYTHON_CMD manage.py collectstatic --noinput
